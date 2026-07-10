@@ -20,3 +20,8 @@ def load_models():
     return model,label_encoder
 
 model,label_encoder=load_models()
+transform=transforms.Compose([
+    transforms.Resize((128,128)),
+    transforms.ToTensor(),
+    transforms.ConvertImageDtype(torch.float32)
+])
