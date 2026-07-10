@@ -23,3 +23,37 @@ class MyModel(nn.Module):
 
         self.linear=nn.Linear((512*4*4),128)
         self.output=nn.Linear(128,10)
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.bn1(x)
+        x = self.relu(x)
+        x = self.pooling(x)
+
+        x = self.conv2(x)
+        x = self.bn2(x)
+        x = self.relu(x)
+        x = self.pooling(x)
+
+        x = self.conv3(x)
+        x = self.bn3(x)
+        x = self.relu(x)
+        x = self.pooling(x)
+
+        x = self.conv4(x)
+        x = self.bn4(x)
+        x = self.relu(x)
+        x = self.pooling(x)
+
+        x = self.conv5(x)
+        x = self.bn5(x)
+        x = self.relu(x)
+        x = self.pooling(x)
+
+        x = self.flatten(x)
+        x = self.linear(x)
+        x = self.relu(x)
+        x = self.dropout(x)
+        x = self.output(x)
+
+        return x
