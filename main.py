@@ -35,3 +35,11 @@ if img is not None and st.button("Predict"):
     img=img.unsqueeze(0)
     img=img.to(device)
     pred=model(img)
+    name = torch.argmax(pred, axis=1).item()
+    lbl = label_encoder.inverse_transform([name])[0]
+    if lbl == 'normal':
+        st.success('This Sample has no disease')
+    else:
+        st.success(f"Predicted disease is {lbl}")
+ else:
+    st.error('Please upload an image')
