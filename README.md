@@ -1,4 +1,4 @@
-# 🌾 Paddy Disease Classifier using PyTorch
+# Paddy Disease Classifier using PyTorch
 
 An end-to-end Deep Learning project that classifies rice leaf diseases using a Convolutional Neural Network (CNN) built with PyTorch.
 
