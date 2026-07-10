@@ -25,3 +25,5 @@ transform=transforms.Compose([
     transforms.ToTensor(),
     transforms.ConvertImageDtype(torch.float32)
 ])
+
+st.title('PyTorch Paddy Disease Classifier')
