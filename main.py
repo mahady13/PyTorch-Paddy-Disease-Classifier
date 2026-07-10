@@ -41,5 +41,5 @@ if img is not None and st.button("Predict"):
         st.success('This Sample has no disease')
     else:
         st.success(f"Predicted disease is {lbl}")
- else:
+else:
     st.error('Please upload an image')
