@@ -27,3 +27,11 @@ transform=transforms.Compose([
 ])
 
 st.title('PyTorch Paddy Disease Classifier')
+img=st.file_uploader("Upload an Image to predict")
+if img is not None and st.button("Predict"):
+    img=Image.open(img).convert('RGB')
+    st.image(img,width=200)
+    img=transform(img)
+    img=img.unsqueeze(0)
+    img=img.to(device)
+    pred=model(img)
